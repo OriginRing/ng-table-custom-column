@@ -1,0 +1,45 @@
+<div nz-row [nzGutter]="16">
+  <div nz-col class="gutter-row" [nzSpan]="8">
+    <div class="example-container">
+      <p>已显示(拖拽排序)</p>
+      <div class="example-box" *ngFor="let item of title">{{ item.name }}</div>
+      <div
+        cdkDropList
+        #todoList="cdkDropList"
+        [cdkDropListData]="fix"
+        [cdkDropListConnectedTo]="[doneList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div class="example-box" *ngFor="let item of fix" cdkDrag>
+          {{ item.name }}
+          <span nz-icon nzType="expand" nzTheme="outline"></span>
+        </div>
+      </div>
+      <div class="example-box" *ngFor="let item of footer">{{ item.name }}</div>
+    </div>
+  </div>
+  <div nz-col class="gutter-row" [nzSpan]="8">
+    <div class="example-container">
+      <p>未显示</p>
+      <div
+        cdkDropList
+        #doneList="cdkDropList"
+        [cdkDropListData]="notFix"
+        [cdkDropListConnectedTo]="[todoList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div class="example-box" *ngFor="let item of notFix" cdkDrag>
+          {{ item.name }}
+          <span nz-icon nzType="expand" nzTheme="outline"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *nzModalFooter>
+  <button nz-button (click)="canvas()">取消</button>
+  <button nz-button nzType="primary" (click)="setCustom()">确定</button>
+</div>

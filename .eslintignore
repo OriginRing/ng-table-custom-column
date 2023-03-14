@@ -1,0 +1,9 @@
+.angular/
+dist/
+out-tsc/
+node_modules/
+.idea/
+.eslintcache
+logs
+*.log
+.npm

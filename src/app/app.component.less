@@ -1,0 +1,46 @@
+:host {
+  ::ng-deep {
+    .ant-table-thead {
+      .ant-table-row {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+
+        // 为保证flex不受内容长度影响
+        th {
+          overflow: hidden;
+        }
+      }
+    }
+
+    .ant-table-tbody {
+      tr {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        td {
+          overflow: hidden;
+        }
+      }
+    }
+
+    // 使用 nzScroll 时，添加该样式
+    .ant-table-fixed {
+      tr {
+        // 释放对应的容器展示阴影
+        .ant-table-cell-fix-left-last, .ant-table-cell-fix-right-first {
+          overflow: visible;
+        }
+      }
+      col {
+        width: auto !important;
+        min-width: auto !important;
+        display: none;
+      }
+      .ant-table-row {
+        width: 100%;
+      }
+    }
+  }
+}

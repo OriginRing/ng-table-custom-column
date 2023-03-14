@@ -1,0 +1,6 @@
+.angular/
+node_modules/
+out-tsc/
+misc/
+boot/
+docker/

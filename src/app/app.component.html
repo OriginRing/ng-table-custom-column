@@ -1,0 +1,121 @@
+<button nz-button nzType="primary">ok</button>
+<nz-divider nzType="vertical"></nz-divider>
+<button nz-button nzType="primary" (click)="settingCustom()">
+  <span nz-icon nzType="setting" nzTheme="outline"></span>
+</button>
+
+<nz-table #basicTable [nzData]="listOfData">
+  <thead>
+    <tr>
+      <th appTableStyle [columnList]="columnList" type="name" *ngIf="getShow('name')">名称</th>
+      <th appTableStyle [columnList]="columnList" type="sex" *ngIf="getShow('sex')">性别</th>
+      <th
+        appTableStyle
+        [columnList]="columnList"
+        type="age"
+        *ngIf="getShow('age')"
+        [nzSortFn]="sortFn"
+      >
+        年龄
+      </th>
+      <th appTableStyle [columnList]="columnList" type="address" *ngIf="getShow('address')">
+        地址
+      </th>
+      <th appTableStyle [columnList]="columnList" type="idCode" *ngIf="getShow('idCode')">
+        身份证
+      </th>
+      <th appTableStyle [columnList]="columnList" type="phone" *ngIf="getShow('phone')">
+        联系方式
+      </th>
+      <th appTableStyle [columnList]="columnList" type="action" *ngIf="getShow('action')">操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data; index as i">
+      <td appTableStyle [columnList]="columnList" type="name" *ngIf="getShow('name')">
+        {{ data.name }}
+      </td>
+      <td appTableStyle [columnList]="columnList" type="sex" *ngIf="getShow('sex')">
+        <ng-container *ngIf="data.sex === 'man'; else sex">男</ng-container>
+        <ng-template #sex>女</ng-template>
+      </td>
+      <td appTableStyle [columnList]="columnList" type="age" *ngIf="getShow('age')">
+        {{ data.age }}
+      </td>
+      <td appTableStyle [columnList]="columnList" type="address" *ngIf="getShow('address')">
+        {{ data.address }}
+      </td>
+      <td appTableStyle [columnList]="columnList" type="idCode" *ngIf="getShow('idCode')">
+        {{ data.idCode }}
+      </td>
+      <td appTableStyle [columnList]="columnList" type="phone" *ngIf="getShow('phone')">
+        {{ data.phone }}
+      </td>
+      <td appTableStyle [columnList]="columnList" type="action" *ngIf="getShow('action')">
+        <a>Action</a>
+        <nz-divider nzType="vertical"></nz-divider>
+        <a>Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
+
+<nz-table #basicTable [nzData]="listOfData" [nzScroll]="{ x: '1200px' }">
+  <thead>
+    <tr>
+      <th nzLeft appTableStyle [columnList]="columnList" type="name" *ngIf="getShow('name')">
+        名称
+      </th>
+      <th appTableStyle [columnList]="columnList" type="sex" *ngIf="getShow('sex')">性别</th>
+      <th
+        appTableStyle
+        [columnList]="columnList"
+        type="age"
+        *ngIf="getShow('age')"
+        [nzSortFn]="sortFn"
+      >
+        年龄
+      </th>
+      <th appTableStyle [columnList]="columnList" type="address" *ngIf="getShow('address')">
+        地址
+      </th>
+      <th appTableStyle [columnList]="columnList" type="idCode" *ngIf="getShow('idCode')">
+        身份证
+      </th>
+      <th appTableStyle [columnList]="columnList" type="phone" *ngIf="getShow('phone')">
+        联系方式
+      </th>
+      <th nzRight appTableStyle [columnList]="columnList" type="action" *ngIf="getShow('action')">
+        操作
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data; index as i">
+      <td nzLeft appTableStyle [columnList]="columnList" type="name" *ngIf="getShow('name')">
+        {{ data.name }}
+      </td>
+      <td appTableStyle [columnList]="columnList" type="sex" *ngIf="getShow('sex')">
+        <ng-container *ngIf="data.sex === 'man'; else sex">男</ng-container>
+        <ng-template #sex>女</ng-template>
+      </td>
+      <td appTableStyle [columnList]="columnList" type="age" *ngIf="getShow('age')">
+        {{ data.age }}
+      </td>
+      <td appTableStyle [columnList]="columnList" type="address" *ngIf="getShow('address')">
+        {{ data.address }}
+      </td>
+      <td appTableStyle [columnList]="columnList" type="idCode" *ngIf="getShow('idCode')">
+        {{ data.idCode }}
+      </td>
+      <td appTableStyle [columnList]="columnList" type="phone" *ngIf="getShow('phone')">
+        {{ data.phone }}
+      </td>
+      <td nzRight appTableStyle [columnList]="columnList" type="action" *ngIf="getShow('action')">
+        <a>Action</a>
+        <nz-divider nzType="vertical"></nz-divider>
+        <a>Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
