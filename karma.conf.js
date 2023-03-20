@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/ng-custom-row'),
+      dir: require('path').join(__dirname, './coverage/ng-table-custom-column'),
       subdir: '.',
       reporters: [
         { type: 'html' },
