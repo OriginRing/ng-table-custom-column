@@ -16,5 +16,6 @@ npm run start
 ```
 
 ## 效果
+预览地址 [Ng Table Custom Column](https://stackblitz.com/github/OriginRing/ng-table-custom-column)
 
-![demo](https://github.com/OriginRing/ng-table-custom-row/blob/master/src/assets/custom.png)
+![demo](https://github.com/OriginRing/ng-table-custom-row/blob/master/src/assets/table.gif)
