@@ -1,5 +1,5 @@
 export interface Person {
-  key: string;
+  key: number;
   name: string;
   sex: 'man' | 'female';
   age: number;

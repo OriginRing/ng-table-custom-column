@@ -8,7 +8,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { IconDefinition } from '@ant-design/icons-angular';
-import { StepBackwardOutline, CaretLeftOutline, SettingOutline, ExpandOutline } from '@ant-design/icons-angular/icons';
+import {
+  StepBackwardOutline,
+  CaretLeftOutline,
+  SettingOutline,
+  ExpandOutline,
+  ReloadOutline
+} from '@ant-design/icons-angular/icons';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzGridModule } from 'ng-zorro-antd/grid';
@@ -23,7 +29,7 @@ import { DirectiveModule } from './directive/directive.module';
 
 registerLocaleData(en);
 
-const icons: IconDefinition[] = [StepBackwardOutline, CaretLeftOutline, SettingOutline, ExpandOutline];
+const icons: IconDefinition[] = [StepBackwardOutline, CaretLeftOutline, SettingOutline, ExpandOutline, ReloadOutline];
 
 @NgModule({
   declarations: [AppComponent, CustomRowComponent],

@@ -1,4 +1,8 @@
 :host {
+  button {
+    margin-bottom: 12px;
+  }
+
   ::ng-deep {
     .ant-table-thead {
       .ant-table-row {
@@ -13,6 +17,12 @@
       }
     }
 
+    col {
+      width: auto !important;
+      min-width: auto !important;
+      display: none;
+    }
+
     .ant-table-tbody {
       tr {
         width: 100%;
@@ -21,6 +31,10 @@
 
         td {
           overflow: hidden;
+        }
+
+        .nz-disable-td {
+          width: 100%;
         }
       }
     }
@@ -32,11 +46,6 @@
         .ant-table-cell-fix-left-last, .ant-table-cell-fix-right-first {
           overflow: visible;
         }
-      }
-      col {
-        width: auto !important;
-        min-width: auto !important;
-        display: none;
       }
       .ant-table-row {
         width: 100%;
