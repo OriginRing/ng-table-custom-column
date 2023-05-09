@@ -21,8 +21,10 @@ npm run start
 
 采用 `flex` 布局，对 `flex` 容器内每个模块进行分配，利用 `order` 属性进行排序
 
+支持使用 `nzScroll` 和 虚拟滚动
+
 ## 效果
 
-![img](https://github.com/OriginRing/ng-table-custom-row/blob/master/src/assets/custom.png)
+预览地址：[ng-table-custom-column](https://stackblitz.com/github/OriginRing/ng-table-custom-column)
 
-![demo](https://github.com/OriginRing/ng-table-custom-row/blob/master/src/assets/table.gif)
+![img](https://github.com/OriginRing/ng-table-custom-row/blob/master/src/assets/image.png)

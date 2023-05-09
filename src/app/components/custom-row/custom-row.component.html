@@ -11,9 +11,14 @@
         class="example-list"
         (cdkDropListDropped)="drop($event)"
       >
-        <div class="example-box" *ngFor="let item of fix" cdkDrag>
+        <div class="example-box" *ngFor="let item of fix; let i = index" cdkDrag>
           {{ item.name }}
-          <span nz-icon nzType="expand" nzTheme="outline"></span>
+          <span
+            nz-icon
+            nzType="minus-circle"
+            nzTheme="outline"
+            (click)="deleteCustom(item, i)"
+          ></span>
         </div>
       </div>
       <div class="example-box" *ngFor="let item of footer">{{ item.name }}</div>
@@ -30,9 +35,9 @@
         class="example-list"
         (cdkDropListDropped)="drop($event)"
       >
-        <div class="example-box" *ngFor="let item of notFix" cdkDrag>
+        <div class="example-box" *ngFor="let item of notFix; let i = index" cdkDrag>
           {{ item.name }}
-          <span nz-icon nzType="expand" nzTheme="outline"></span>
+          <span nz-icon nzType="plus-circle" nzTheme="outline" (click)="addCustom(item, i)"></span>
         </div>
       </div>
     </div>

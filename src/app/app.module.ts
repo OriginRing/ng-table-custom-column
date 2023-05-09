@@ -12,8 +12,9 @@ import {
   StepBackwardOutline,
   CaretLeftOutline,
   SettingOutline,
-  ExpandOutline,
-  ReloadOutline
+  ReloadOutline,
+  PlusCircleOutline,
+  MinusCircleOutline
 } from '@ant-design/icons-angular/icons';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
@@ -29,7 +30,14 @@ import { DirectiveModule } from './directive/directive.module';
 
 registerLocaleData(en);
 
-const icons: IconDefinition[] = [StepBackwardOutline, CaretLeftOutline, SettingOutline, ExpandOutline, ReloadOutline];
+const icons: IconDefinition[] = [
+  StepBackwardOutline,
+  CaretLeftOutline,
+  SettingOutline,
+  PlusCircleOutline,
+  MinusCircleOutline,
+  ReloadOutline
+];
 
 @NgModule({
   declarations: [AppComponent, CustomRowComponent],

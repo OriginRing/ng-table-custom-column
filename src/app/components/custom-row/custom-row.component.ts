@@ -54,4 +54,18 @@ export class CustomRowComponent implements OnInit {
     this.getColumnList = [...this.title, ...this.fix, ...this.notFix, ...this.footer];
     this.nzModalRef.triggerOk().then();
   }
+
+  deleteCustom(value: ColumnsList, index: number): void {
+    value.default = false;
+    this.notFix = [...this.notFix, value];
+    this.fix.splice(index, 1);
+    this.cdr.markForCheck();
+  }
+
+  addCustom(value: ColumnsList, index: number): void {
+    value.default = true;
+    this.fix = [...this.fix, value];
+    this.notFix.splice(index, 1);
+    this.cdr.markForCheck();
+  }
 }

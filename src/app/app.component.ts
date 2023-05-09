@@ -134,15 +134,16 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
       width: 150
     },
     {
-      name: '年龄',
-      value: 'age',
+      name: '性别',
+      value: 'sex',
       default: true,
-      required: false,
+      required: true,
+      fixed: 'left',
       width: 100
     },
     {
-      name: '性别',
-      value: 'sex',
+      name: '年龄',
+      value: 'age',
       default: true,
       required: false,
       width: 100
@@ -179,7 +180,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   ];
   listOfData: Person[] = [];
   loading = false;
-  type: number = 0;
+  type: number = 1;
 
   @ViewChild('virtualTable', { static: false }) nzTableComponent?: NzTableComponent<Person>;
   private destroy$ = new Subject<void>();
@@ -192,7 +193,8 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor(private nzModalService: NzModalService, private cdr: ChangeDetectorRef) {}
 
   public getShow(value: string): boolean {
-    return this.columnList.filter(item => item.value === value)[0].default;
+    const show = this.columnList.filter(item => item.value === value)[0];
+    return show?.required || show?.default;
   }
 
   scrollToIndex(index: number): void {
