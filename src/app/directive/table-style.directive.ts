@@ -27,7 +27,8 @@ export class TableStyleDirective implements OnChanges {
                * 这里只处理了 两个 nzLef，多个 nzLeft，nzRight 同理
                * ······
                * 这里停掉了 name 的自适应宽度，主要是方便固定 sex 的位置
-               * 你也可以不使用这种方式，获取 name 的宽度，给 sex 设置 left,但该样式必须要有!important，防止 zorro 计算的left影响
+               * 你可以给 name 添加使用 nz-resizable 来优化这个问题
+               * 也可以获取 name 的宽度，给 sex 设置 left,但该样式必须要有!important，防止 zorro 计算的left影响
                */
               this.renderer.setStyle(this.el.nativeElement, 'flex', `0 0 ${v.width}px`);
             }
